@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.scss";
+//Components
+import Header from "./Components/Header";
 
-function App() {
+import { Canvas } from "@react-three/fiber";
+import { Html } from "@react-three/drei";
+
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Header />
+      <Canvas colorManagement camera={{ position: [0, 0, 120], fov: 70 }}>
+        <Html fullscreen>
+          <div className="container">
+            <h1 className="title">Hello, Friend!</h1>
+          </div>
+        </Html>
+      </Canvas>
+    </>
   );
 }
-
-export default App;
